@@ -15,7 +15,7 @@ class Realtime extends Component {
   }
 
   componentDidMount() {
-    this.socket = io('http://192.168.100.138:3000');
+    this.socket = io('http://192.168.43.186:3000');
     this.socket.on('product', (msg) => {
       console.log(msg);
       this.setState({
@@ -24,7 +24,7 @@ class Realtime extends Component {
     });
     axios({
       method: 'GET',
-      url: 'http://192.168.100.138:3000/products',
+      url: 'http://192.168.43.186:3000/products',
     })
       .then((res) => {
         this.setState(
